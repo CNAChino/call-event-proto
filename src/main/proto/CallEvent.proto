@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+option java_package = "com.three55.callevent";
+option java_outer_classname = "CallEventProto";
+
+package callevent;
+
+service EventCollector {
+    rpc Publish (CallEvent) returns(Acknowledgement) {}
+}
+
+message CallEvent {
+
+    int32 proto_version = 1;
+    int32 app_version = 2;
+    int64 event_time = 3;
+
+    message NetworkInfo {
+        string mcc = 1; //
+        string mnc = 2;
+        string network_name = 3; // carrier
+        string network_type = 4; // e.g. LTE, 2G, 3G
+
+        message SignalStrength {
+            int32 dbm = 1;
+            int32 asu = 2;
+        }
+    }
+
+    message DeviceInfo {
+        string imei = 1;
+        string model_no = 2;
+    }
+
+    message LocationInfo {
+        double latitude = 1;
+        double longtitude = 2;
+    }
+
+    message SoftwareInfo {
+        string os_name = 1;
+        string os_version = 2;
+
+    }
+
+}
+
+message Acknowledgement {
+    int32 response_code = 1;
+    string err_msg = 2;
+}
