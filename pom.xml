@@ -6,7 +6,7 @@
 
     <groupId>com.three55</groupId>
     <artifactId>call-event-proto</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <grpc.version>1.17.1</grpc.version>

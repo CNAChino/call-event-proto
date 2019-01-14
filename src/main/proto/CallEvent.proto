@@ -14,34 +14,21 @@ message CallEvent {
     int32 proto_version = 1;
     int32 app_version = 2;
     int64 event_time = 3;
+    string network_mcc = 4; //
+    string network_mnc = 5;
+    string network_name = 6; // carrier
+    string network_type = 7; // e.g. LTE, 2G, 3G
 
-    message NetworkInfo {
-        string mcc = 1; //
-        string mnc = 2;
-        string network_name = 3; // carrier
-        string network_type = 4; // e.g. LTE, 2G, 3G
+    int32 signal_dbm = 8;
+    int32 signal_asu = 9;
 
-        message SignalStrength {
-            int32 dbm = 1;
-            int32 asu = 2;
-        }
-    }
+    string device_brand = 10;
+    string device_model = 11;
+    string device_os_name = 12;
+    string device_os_version = 13;
 
-    message DeviceInfo {
-        string imei = 1;
-        string model_no = 2;
-    }
-
-    message LocationInfo {
-        double latitude = 1;
-        double longtitude = 2;
-    }
-
-    message SoftwareInfo {
-        string os_name = 1;
-        string os_version = 2;
-
-    }
+    double latitude = 14;
+    double longtitude = 15;
 
 }
 

@@ -32,6 +32,128 @@ public final class CallEventProto {
      * <code>int64 event_time = 3;</code>
      */
     long getEventTime();
+
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>string network_mcc = 4;</code>
+     */
+    java.lang.String getNetworkMcc();
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>string network_mcc = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNetworkMccBytes();
+
+    /**
+     * <code>string network_mnc = 5;</code>
+     */
+    java.lang.String getNetworkMnc();
+    /**
+     * <code>string network_mnc = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getNetworkMncBytes();
+
+    /**
+     * <pre>
+     * carrier
+     * </pre>
+     *
+     * <code>string network_name = 6;</code>
+     */
+    java.lang.String getNetworkName();
+    /**
+     * <pre>
+     * carrier
+     * </pre>
+     *
+     * <code>string network_name = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getNetworkNameBytes();
+
+    /**
+     * <pre>
+     * e.g. LTE, 2G, 3G
+     * </pre>
+     *
+     * <code>string network_type = 7;</code>
+     */
+    java.lang.String getNetworkType();
+    /**
+     * <pre>
+     * e.g. LTE, 2G, 3G
+     * </pre>
+     *
+     * <code>string network_type = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getNetworkTypeBytes();
+
+    /**
+     * <code>int32 signal_dbm = 8;</code>
+     */
+    int getSignalDbm();
+
+    /**
+     * <code>int32 signal_asu = 9;</code>
+     */
+    int getSignalAsu();
+
+    /**
+     * <code>string device_brand = 10;</code>
+     */
+    java.lang.String getDeviceBrand();
+    /**
+     * <code>string device_brand = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceBrandBytes();
+
+    /**
+     * <code>string device_model = 11;</code>
+     */
+    java.lang.String getDeviceModel();
+    /**
+     * <code>string device_model = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceModelBytes();
+
+    /**
+     * <code>string device_os_name = 12;</code>
+     */
+    java.lang.String getDeviceOsName();
+    /**
+     * <code>string device_os_name = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceOsNameBytes();
+
+    /**
+     * <code>string device_os_version = 13;</code>
+     */
+    java.lang.String getDeviceOsVersion();
+    /**
+     * <code>string device_os_version = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceOsVersionBytes();
+
+    /**
+     * <code>double latitude = 14;</code>
+     */
+    double getLatitude();
+
+    /**
+     * <code>double longtitude = 15;</code>
+     */
+    double getLongtitude();
   }
   /**
    * Protobuf type {@code callevent.CallEvent}
@@ -49,6 +171,18 @@ public final class CallEventProto {
       protoVersion_ = 0;
       appVersion_ = 0;
       eventTime_ = 0L;
+      networkMcc_ = "";
+      networkMnc_ = "";
+      networkName_ = "";
+      networkType_ = "";
+      signalDbm_ = 0;
+      signalAsu_ = 0;
+      deviceBrand_ = "";
+      deviceModel_ = "";
+      deviceOsName_ = "";
+      deviceOsVersion_ = "";
+      latitude_ = 0D;
+      longtitude_ = 0D;
     }
 
     @java.lang.Override
@@ -97,6 +231,74 @@ public final class CallEventProto {
               eventTime_ = input.readInt64();
               break;
             }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkMcc_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkMnc_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkName_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkType_ = s;
+              break;
+            }
+            case 64: {
+
+              signalDbm_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              signalAsu_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceBrand_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceModel_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceOsName_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceOsVersion_ = s;
+              break;
+            }
+            case 113: {
+
+              latitude_ = input.readDouble();
+              break;
+            }
+            case 121: {
+
+              longtitude_ = input.readDouble();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -119,3399 +321,6 @@ public final class CallEventProto {
       return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.three55.callevent.CallEventProto.CallEvent.class, com.three55.callevent.CallEventProto.CallEvent.Builder.class);
-    }
-
-    public interface NetworkInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:callevent.CallEvent.NetworkInfo)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <pre>
-       * </pre>
-       *
-       * <code>string mcc = 1;</code>
-       */
-      java.lang.String getMcc();
-      /**
-       * <pre>
-       * </pre>
-       *
-       * <code>string mcc = 1;</code>
-       */
-      com.google.protobuf.ByteString
-          getMccBytes();
-
-      /**
-       * <code>string mnc = 2;</code>
-       */
-      java.lang.String getMnc();
-      /**
-       * <code>string mnc = 2;</code>
-       */
-      com.google.protobuf.ByteString
-          getMncBytes();
-
-      /**
-       * <pre>
-       * carrier
-       * </pre>
-       *
-       * <code>string network_name = 3;</code>
-       */
-      java.lang.String getNetworkName();
-      /**
-       * <pre>
-       * carrier
-       * </pre>
-       *
-       * <code>string network_name = 3;</code>
-       */
-      com.google.protobuf.ByteString
-          getNetworkNameBytes();
-
-      /**
-       * <pre>
-       * e.g. LTE, 2G, 3G
-       * </pre>
-       *
-       * <code>string network_type = 4;</code>
-       */
-      java.lang.String getNetworkType();
-      /**
-       * <pre>
-       * e.g. LTE, 2G, 3G
-       * </pre>
-       *
-       * <code>string network_type = 4;</code>
-       */
-      com.google.protobuf.ByteString
-          getNetworkTypeBytes();
-    }
-    /**
-     * Protobuf type {@code callevent.CallEvent.NetworkInfo}
-     */
-    public  static final class NetworkInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:callevent.CallEvent.NetworkInfo)
-        NetworkInfoOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use NetworkInfo.newBuilder() to construct.
-      private NetworkInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private NetworkInfo() {
-        mcc_ = "";
-        mnc_ = "";
-        networkName_ = "";
-        networkType_ = "";
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private NetworkInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                mcc_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                mnc_ = s;
-                break;
-              }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                networkName_ = s;
-                break;
-              }
-              case 34: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                networkType_ = s;
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.class, com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.Builder.class);
-      }
-
-      public interface SignalStrengthOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:callevent.CallEvent.NetworkInfo.SignalStrength)
-          com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>int32 dbm = 1;</code>
-         */
-        int getDbm();
-
-        /**
-         * <code>int32 asu = 2;</code>
-         */
-        int getAsu();
-      }
-      /**
-       * Protobuf type {@code callevent.CallEvent.NetworkInfo.SignalStrength}
-       */
-      public  static final class SignalStrength extends
-          com.google.protobuf.GeneratedMessageV3 implements
-          // @@protoc_insertion_point(message_implements:callevent.CallEvent.NetworkInfo.SignalStrength)
-          SignalStrengthOrBuilder {
-      private static final long serialVersionUID = 0L;
-        // Use SignalStrength.newBuilder() to construct.
-        private SignalStrength(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-        }
-        private SignalStrength() {
-          dbm_ = 0;
-          asu_ = 0;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-          return this.unknownFields;
-        }
-        private SignalStrength(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          int mutable_bitField0_ = 0;
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 8: {
-
-                  dbm_ = input.readInt32();
-                  break;
-                }
-                case 16: {
-
-                  asu_ = input.readInt32();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength.class, com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength.Builder.class);
-        }
-
-        public static final int DBM_FIELD_NUMBER = 1;
-        private int dbm_;
-        /**
-         * <code>int32 dbm = 1;</code>
-         */
-        public int getDbm() {
-          return dbm_;
-        }
-
-        public static final int ASU_FIELD_NUMBER = 2;
-        private int asu_;
-        /**
-         * <code>int32 asu = 2;</code>
-         */
-        public int getAsu() {
-          return asu_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized == 1) return true;
-          if (isInitialized == 0) return false;
-
-          memoizedIsInitialized = 1;
-          return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
-          if (dbm_ != 0) {
-            output.writeInt32(1, dbm_);
-          }
-          if (asu_ != 0) {
-            output.writeInt32(2, asu_);
-          }
-          unknownFields.writeTo(output);
-        }
-
-        public int getSerializedSize() {
-          int size = memoizedSize;
-          if (size != -1) return size;
-
-          size = 0;
-          if (dbm_ != 0) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(1, dbm_);
-          }
-          if (asu_ != 0) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(2, asu_);
-          }
-          size += unknownFields.getSerializedSize();
-          memoizedSize = size;
-          return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-          if (obj == this) {
-           return true;
-          }
-          if (!(obj instanceof com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength)) {
-            return super.equals(obj);
-          }
-          com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength other = (com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength) obj;
-
-          boolean result = true;
-          result = result && (getDbm()
-              == other.getDbm());
-          result = result && (getAsu()
-              == other.getAsu());
-          result = result && unknownFields.equals(other.unknownFields);
-          return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-          if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-          }
-          int hash = 41;
-          hash = (19 * hash) + getDescriptor().hashCode();
-          hash = (37 * hash) + DBM_FIELD_NUMBER;
-          hash = (53 * hash) + getDbm();
-          hash = (37 * hash) + ASU_FIELD_NUMBER;
-          hash = (53 * hash) + getAsu();
-          hash = (29 * hash) + unknownFields.hashCode();
-          memoizedHashCode = hash;
-          return hash;
-        }
-
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            java.nio.ByteBuffer data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
-        }
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public Builder newBuilderForType() { return newBuilder(); }
-        public static Builder newBuilder() {
-          return DEFAULT_INSTANCE.toBuilder();
-        }
-        public static Builder newBuilder(com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength prototype) {
-          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-        public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        /**
-         * Protobuf type {@code callevent.CallEvent.NetworkInfo.SignalStrength}
-         */
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:callevent.CallEvent.NetworkInfo.SignalStrength)
-            com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrengthOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_descriptor;
-          }
-
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength.class, com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength.Builder.class);
-          }
-
-          // Construct using com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-
-          private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
-          }
-          public Builder clear() {
-            super.clear();
-            dbm_ = 0;
-
-            asu_ = 0;
-
-            return this;
-          }
-
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_descriptor;
-          }
-
-          public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength getDefaultInstanceForType() {
-            return com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength.getDefaultInstance();
-          }
-
-          public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength build() {
-            com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-
-          public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength buildPartial() {
-            com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength result = new com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength(this);
-            result.dbm_ = dbm_;
-            result.asu_ = asu_;
-            onBuilt();
-            return result;
-          }
-
-          public Builder clone() {
-            return (Builder) super.clone();
-          }
-          public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-            return (Builder) super.setField(field, value);
-          }
-          public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
-          }
-          public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
-          }
-          public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
-          }
-          public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-            return (Builder) super.addRepeatedField(field, value);
-          }
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength) {
-              return mergeFrom((com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-
-          public Builder mergeFrom(com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength other) {
-            if (other == com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength.getDefaultInstance()) return this;
-            if (other.getDbm() != 0) {
-              setDbm(other.getDbm());
-            }
-            if (other.getAsu() != 0) {
-              setAsu(other.getAsu());
-            }
-            this.mergeUnknownFields(other.unknownFields);
-            onChanged();
-            return this;
-          }
-
-          public final boolean isInitialized() {
-            return true;
-          }
-
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength parsedMessage = null;
-            try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength) e.getUnfinishedMessage();
-              throw e.unwrapIOException();
-            } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
-            return this;
-          }
-
-          private int dbm_ ;
-          /**
-           * <code>int32 dbm = 1;</code>
-           */
-          public int getDbm() {
-            return dbm_;
-          }
-          /**
-           * <code>int32 dbm = 1;</code>
-           */
-          public Builder setDbm(int value) {
-            
-            dbm_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <code>int32 dbm = 1;</code>
-           */
-          public Builder clearDbm() {
-            
-            dbm_ = 0;
-            onChanged();
-            return this;
-          }
-
-          private int asu_ ;
-          /**
-           * <code>int32 asu = 2;</code>
-           */
-          public int getAsu() {
-            return asu_;
-          }
-          /**
-           * <code>int32 asu = 2;</code>
-           */
-          public Builder setAsu(int value) {
-            
-            asu_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <code>int32 asu = 2;</code>
-           */
-          public Builder clearAsu() {
-            
-            asu_ = 0;
-            onChanged();
-            return this;
-          }
-          public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFieldsProto3(unknownFields);
-          }
-
-          public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.mergeUnknownFields(unknownFields);
-          }
-
-
-          // @@protoc_insertion_point(builder_scope:callevent.CallEvent.NetworkInfo.SignalStrength)
-        }
-
-        // @@protoc_insertion_point(class_scope:callevent.CallEvent.NetworkInfo.SignalStrength)
-        private static final com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength DEFAULT_INSTANCE;
-        static {
-          DEFAULT_INSTANCE = new com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength();
-        }
-
-        public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength getDefaultInstance() {
-          return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<SignalStrength>
-            PARSER = new com.google.protobuf.AbstractParser<SignalStrength>() {
-          public SignalStrength parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SignalStrength(input, extensionRegistry);
-          }
-        };
-
-        public static com.google.protobuf.Parser<SignalStrength> parser() {
-          return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<SignalStrength> getParserForType() {
-          return PARSER;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.SignalStrength getDefaultInstanceForType() {
-          return DEFAULT_INSTANCE;
-        }
-
-      }
-
-      public static final int MCC_FIELD_NUMBER = 1;
-      private volatile java.lang.Object mcc_;
-      /**
-       * <pre>
-       * </pre>
-       *
-       * <code>string mcc = 1;</code>
-       */
-      public java.lang.String getMcc() {
-        java.lang.Object ref = mcc_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          mcc_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * </pre>
-       *
-       * <code>string mcc = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMccBytes() {
-        java.lang.Object ref = mcc_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mcc_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int MNC_FIELD_NUMBER = 2;
-      private volatile java.lang.Object mnc_;
-      /**
-       * <code>string mnc = 2;</code>
-       */
-      public java.lang.String getMnc() {
-        java.lang.Object ref = mnc_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          mnc_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string mnc = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMncBytes() {
-        java.lang.Object ref = mnc_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mnc_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int NETWORK_NAME_FIELD_NUMBER = 3;
-      private volatile java.lang.Object networkName_;
-      /**
-       * <pre>
-       * carrier
-       * </pre>
-       *
-       * <code>string network_name = 3;</code>
-       */
-      public java.lang.String getNetworkName() {
-        java.lang.Object ref = networkName_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          networkName_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * carrier
-       * </pre>
-       *
-       * <code>string network_name = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNetworkNameBytes() {
-        java.lang.Object ref = networkName_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          networkName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int NETWORK_TYPE_FIELD_NUMBER = 4;
-      private volatile java.lang.Object networkType_;
-      /**
-       * <pre>
-       * e.g. LTE, 2G, 3G
-       * </pre>
-       *
-       * <code>string network_type = 4;</code>
-       */
-      public java.lang.String getNetworkType() {
-        java.lang.Object ref = networkType_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          networkType_ = s;
-          return s;
-        }
-      }
-      /**
-       * <pre>
-       * e.g. LTE, 2G, 3G
-       * </pre>
-       *
-       * <code>string network_type = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNetworkTypeBytes() {
-        java.lang.Object ref = networkType_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          networkType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getMccBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mcc_);
-        }
-        if (!getMncBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mnc_);
-        }
-        if (!getNetworkNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, networkName_);
-        }
-        if (!getNetworkTypeBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, networkType_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getMccBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mcc_);
-        }
-        if (!getMncBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mnc_);
-        }
-        if (!getNetworkNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, networkName_);
-        }
-        if (!getNetworkTypeBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, networkType_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.three55.callevent.CallEventProto.CallEvent.NetworkInfo)) {
-          return super.equals(obj);
-        }
-        com.three55.callevent.CallEventProto.CallEvent.NetworkInfo other = (com.three55.callevent.CallEventProto.CallEvent.NetworkInfo) obj;
-
-        boolean result = true;
-        result = result && getMcc()
-            .equals(other.getMcc());
-        result = result && getMnc()
-            .equals(other.getMnc());
-        result = result && getNetworkName()
-            .equals(other.getNetworkName());
-        result = result && getNetworkType()
-            .equals(other.getNetworkType());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + MCC_FIELD_NUMBER;
-        hash = (53 * hash) + getMcc().hashCode();
-        hash = (37 * hash) + MNC_FIELD_NUMBER;
-        hash = (53 * hash) + getMnc().hashCode();
-        hash = (37 * hash) + NETWORK_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getNetworkName().hashCode();
-        hash = (37 * hash) + NETWORK_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getNetworkType().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.three55.callevent.CallEventProto.CallEvent.NetworkInfo prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code callevent.CallEvent.NetworkInfo}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:callevent.CallEvent.NetworkInfo)
-          com.three55.callevent.CallEventProto.CallEvent.NetworkInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.class, com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.Builder.class);
-        }
-
-        // Construct using com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          mcc_ = "";
-
-          mnc_ = "";
-
-          networkName_ = "";
-
-          networkType_ = "";
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_NetworkInfo_descriptor;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo getDefaultInstanceForType() {
-          return com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.getDefaultInstance();
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo build() {
-          com.three55.callevent.CallEventProto.CallEvent.NetworkInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo buildPartial() {
-          com.three55.callevent.CallEventProto.CallEvent.NetworkInfo result = new com.three55.callevent.CallEventProto.CallEvent.NetworkInfo(this);
-          result.mcc_ = mcc_;
-          result.mnc_ = mnc_;
-          result.networkName_ = networkName_;
-          result.networkType_ = networkType_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.three55.callevent.CallEventProto.CallEvent.NetworkInfo) {
-            return mergeFrom((com.three55.callevent.CallEventProto.CallEvent.NetworkInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.three55.callevent.CallEventProto.CallEvent.NetworkInfo other) {
-          if (other == com.three55.callevent.CallEventProto.CallEvent.NetworkInfo.getDefaultInstance()) return this;
-          if (!other.getMcc().isEmpty()) {
-            mcc_ = other.mcc_;
-            onChanged();
-          }
-          if (!other.getMnc().isEmpty()) {
-            mnc_ = other.mnc_;
-            onChanged();
-          }
-          if (!other.getNetworkName().isEmpty()) {
-            networkName_ = other.networkName_;
-            onChanged();
-          }
-          if (!other.getNetworkType().isEmpty()) {
-            networkType_ = other.networkType_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.three55.callevent.CallEventProto.CallEvent.NetworkInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.three55.callevent.CallEventProto.CallEvent.NetworkInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object mcc_ = "";
-        /**
-         * <pre>
-         * </pre>
-         *
-         * <code>string mcc = 1;</code>
-         */
-        public java.lang.String getMcc() {
-          java.lang.Object ref = mcc_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            mcc_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * </pre>
-         *
-         * <code>string mcc = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-            getMccBytes() {
-          java.lang.Object ref = mcc_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            mcc_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * </pre>
-         *
-         * <code>string mcc = 1;</code>
-         */
-        public Builder setMcc(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          mcc_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * </pre>
-         *
-         * <code>string mcc = 1;</code>
-         */
-        public Builder clearMcc() {
-          
-          mcc_ = getDefaultInstance().getMcc();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * </pre>
-         *
-         * <code>string mcc = 1;</code>
-         */
-        public Builder setMccBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          mcc_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object mnc_ = "";
-        /**
-         * <code>string mnc = 2;</code>
-         */
-        public java.lang.String getMnc() {
-          java.lang.Object ref = mnc_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            mnc_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string mnc = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-            getMncBytes() {
-          java.lang.Object ref = mnc_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            mnc_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string mnc = 2;</code>
-         */
-        public Builder setMnc(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          mnc_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string mnc = 2;</code>
-         */
-        public Builder clearMnc() {
-          
-          mnc_ = getDefaultInstance().getMnc();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string mnc = 2;</code>
-         */
-        public Builder setMncBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          mnc_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object networkName_ = "";
-        /**
-         * <pre>
-         * carrier
-         * </pre>
-         *
-         * <code>string network_name = 3;</code>
-         */
-        public java.lang.String getNetworkName() {
-          java.lang.Object ref = networkName_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            networkName_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * carrier
-         * </pre>
-         *
-         * <code>string network_name = 3;</code>
-         */
-        public com.google.protobuf.ByteString
-            getNetworkNameBytes() {
-          java.lang.Object ref = networkName_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            networkName_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * carrier
-         * </pre>
-         *
-         * <code>string network_name = 3;</code>
-         */
-        public Builder setNetworkName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          networkName_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * carrier
-         * </pre>
-         *
-         * <code>string network_name = 3;</code>
-         */
-        public Builder clearNetworkName() {
-          
-          networkName_ = getDefaultInstance().getNetworkName();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * carrier
-         * </pre>
-         *
-         * <code>string network_name = 3;</code>
-         */
-        public Builder setNetworkNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          networkName_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object networkType_ = "";
-        /**
-         * <pre>
-         * e.g. LTE, 2G, 3G
-         * </pre>
-         *
-         * <code>string network_type = 4;</code>
-         */
-        public java.lang.String getNetworkType() {
-          java.lang.Object ref = networkType_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            networkType_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <pre>
-         * e.g. LTE, 2G, 3G
-         * </pre>
-         *
-         * <code>string network_type = 4;</code>
-         */
-        public com.google.protobuf.ByteString
-            getNetworkTypeBytes() {
-          java.lang.Object ref = networkType_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            networkType_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <pre>
-         * e.g. LTE, 2G, 3G
-         * </pre>
-         *
-         * <code>string network_type = 4;</code>
-         */
-        public Builder setNetworkType(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          networkType_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * e.g. LTE, 2G, 3G
-         * </pre>
-         *
-         * <code>string network_type = 4;</code>
-         */
-        public Builder clearNetworkType() {
-          
-          networkType_ = getDefaultInstance().getNetworkType();
-          onChanged();
-          return this;
-        }
-        /**
-         * <pre>
-         * e.g. LTE, 2G, 3G
-         * </pre>
-         *
-         * <code>string network_type = 4;</code>
-         */
-        public Builder setNetworkTypeBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          networkType_ = value;
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:callevent.CallEvent.NetworkInfo)
-      }
-
-      // @@protoc_insertion_point(class_scope:callevent.CallEvent.NetworkInfo)
-      private static final com.three55.callevent.CallEventProto.CallEvent.NetworkInfo DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.three55.callevent.CallEventProto.CallEvent.NetworkInfo();
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.NetworkInfo getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<NetworkInfo>
-          PARSER = new com.google.protobuf.AbstractParser<NetworkInfo>() {
-        public NetworkInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NetworkInfo(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<NetworkInfo> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<NetworkInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.three55.callevent.CallEventProto.CallEvent.NetworkInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface DeviceInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:callevent.CallEvent.DeviceInfo)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>string imei = 1;</code>
-       */
-      java.lang.String getImei();
-      /**
-       * <code>string imei = 1;</code>
-       */
-      com.google.protobuf.ByteString
-          getImeiBytes();
-
-      /**
-       * <code>string model_no = 2;</code>
-       */
-      java.lang.String getModelNo();
-      /**
-       * <code>string model_no = 2;</code>
-       */
-      com.google.protobuf.ByteString
-          getModelNoBytes();
-    }
-    /**
-     * Protobuf type {@code callevent.CallEvent.DeviceInfo}
-     */
-    public  static final class DeviceInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:callevent.CallEvent.DeviceInfo)
-        DeviceInfoOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use DeviceInfo.newBuilder() to construct.
-      private DeviceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private DeviceInfo() {
-        imei_ = "";
-        modelNo_ = "";
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private DeviceInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                imei_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                modelNo_ = s;
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_DeviceInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_DeviceInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.three55.callevent.CallEventProto.CallEvent.DeviceInfo.class, com.three55.callevent.CallEventProto.CallEvent.DeviceInfo.Builder.class);
-      }
-
-      public static final int IMEI_FIELD_NUMBER = 1;
-      private volatile java.lang.Object imei_;
-      /**
-       * <code>string imei = 1;</code>
-       */
-      public java.lang.String getImei() {
-        java.lang.Object ref = imei_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          imei_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string imei = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getImeiBytes() {
-        java.lang.Object ref = imei_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          imei_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int MODEL_NO_FIELD_NUMBER = 2;
-      private volatile java.lang.Object modelNo_;
-      /**
-       * <code>string model_no = 2;</code>
-       */
-      public java.lang.String getModelNo() {
-        java.lang.Object ref = modelNo_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          modelNo_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string model_no = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getModelNoBytes() {
-        java.lang.Object ref = modelNo_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          modelNo_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getImeiBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, imei_);
-        }
-        if (!getModelNoBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelNo_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getImeiBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, imei_);
-        }
-        if (!getModelNoBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelNo_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.three55.callevent.CallEventProto.CallEvent.DeviceInfo)) {
-          return super.equals(obj);
-        }
-        com.three55.callevent.CallEventProto.CallEvent.DeviceInfo other = (com.three55.callevent.CallEventProto.CallEvent.DeviceInfo) obj;
-
-        boolean result = true;
-        result = result && getImei()
-            .equals(other.getImei());
-        result = result && getModelNo()
-            .equals(other.getModelNo());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + IMEI_FIELD_NUMBER;
-        hash = (53 * hash) + getImei().hashCode();
-        hash = (37 * hash) + MODEL_NO_FIELD_NUMBER;
-        hash = (53 * hash) + getModelNo().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.three55.callevent.CallEventProto.CallEvent.DeviceInfo prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code callevent.CallEvent.DeviceInfo}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:callevent.CallEvent.DeviceInfo)
-          com.three55.callevent.CallEventProto.CallEvent.DeviceInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_DeviceInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_DeviceInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.three55.callevent.CallEventProto.CallEvent.DeviceInfo.class, com.three55.callevent.CallEventProto.CallEvent.DeviceInfo.Builder.class);
-        }
-
-        // Construct using com.three55.callevent.CallEventProto.CallEvent.DeviceInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          imei_ = "";
-
-          modelNo_ = "";
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_DeviceInfo_descriptor;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.DeviceInfo getDefaultInstanceForType() {
-          return com.three55.callevent.CallEventProto.CallEvent.DeviceInfo.getDefaultInstance();
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.DeviceInfo build() {
-          com.three55.callevent.CallEventProto.CallEvent.DeviceInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.DeviceInfo buildPartial() {
-          com.three55.callevent.CallEventProto.CallEvent.DeviceInfo result = new com.three55.callevent.CallEventProto.CallEvent.DeviceInfo(this);
-          result.imei_ = imei_;
-          result.modelNo_ = modelNo_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.three55.callevent.CallEventProto.CallEvent.DeviceInfo) {
-            return mergeFrom((com.three55.callevent.CallEventProto.CallEvent.DeviceInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.three55.callevent.CallEventProto.CallEvent.DeviceInfo other) {
-          if (other == com.three55.callevent.CallEventProto.CallEvent.DeviceInfo.getDefaultInstance()) return this;
-          if (!other.getImei().isEmpty()) {
-            imei_ = other.imei_;
-            onChanged();
-          }
-          if (!other.getModelNo().isEmpty()) {
-            modelNo_ = other.modelNo_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.three55.callevent.CallEventProto.CallEvent.DeviceInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.three55.callevent.CallEventProto.CallEvent.DeviceInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object imei_ = "";
-        /**
-         * <code>string imei = 1;</code>
-         */
-        public java.lang.String getImei() {
-          java.lang.Object ref = imei_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            imei_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string imei = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-            getImeiBytes() {
-          java.lang.Object ref = imei_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            imei_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string imei = 1;</code>
-         */
-        public Builder setImei(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          imei_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string imei = 1;</code>
-         */
-        public Builder clearImei() {
-          
-          imei_ = getDefaultInstance().getImei();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string imei = 1;</code>
-         */
-        public Builder setImeiBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          imei_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object modelNo_ = "";
-        /**
-         * <code>string model_no = 2;</code>
-         */
-        public java.lang.String getModelNo() {
-          java.lang.Object ref = modelNo_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            modelNo_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string model_no = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-            getModelNoBytes() {
-          java.lang.Object ref = modelNo_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            modelNo_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string model_no = 2;</code>
-         */
-        public Builder setModelNo(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          modelNo_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string model_no = 2;</code>
-         */
-        public Builder clearModelNo() {
-          
-          modelNo_ = getDefaultInstance().getModelNo();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string model_no = 2;</code>
-         */
-        public Builder setModelNoBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          modelNo_ = value;
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:callevent.CallEvent.DeviceInfo)
-      }
-
-      // @@protoc_insertion_point(class_scope:callevent.CallEvent.DeviceInfo)
-      private static final com.three55.callevent.CallEventProto.CallEvent.DeviceInfo DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.three55.callevent.CallEventProto.CallEvent.DeviceInfo();
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.DeviceInfo getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<DeviceInfo>
-          PARSER = new com.google.protobuf.AbstractParser<DeviceInfo>() {
-        public DeviceInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeviceInfo(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<DeviceInfo> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<DeviceInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.three55.callevent.CallEventProto.CallEvent.DeviceInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface LocationInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:callevent.CallEvent.LocationInfo)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>double latitude = 1;</code>
-       */
-      double getLatitude();
-
-      /**
-       * <code>double longtitude = 2;</code>
-       */
-      double getLongtitude();
-    }
-    /**
-     * Protobuf type {@code callevent.CallEvent.LocationInfo}
-     */
-    public  static final class LocationInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:callevent.CallEvent.LocationInfo)
-        LocationInfoOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use LocationInfo.newBuilder() to construct.
-      private LocationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private LocationInfo() {
-        latitude_ = 0D;
-        longtitude_ = 0D;
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private LocationInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 9: {
-
-                latitude_ = input.readDouble();
-                break;
-              }
-              case 17: {
-
-                longtitude_ = input.readDouble();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_LocationInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_LocationInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.three55.callevent.CallEventProto.CallEvent.LocationInfo.class, com.three55.callevent.CallEventProto.CallEvent.LocationInfo.Builder.class);
-      }
-
-      public static final int LATITUDE_FIELD_NUMBER = 1;
-      private double latitude_;
-      /**
-       * <code>double latitude = 1;</code>
-       */
-      public double getLatitude() {
-        return latitude_;
-      }
-
-      public static final int LONGTITUDE_FIELD_NUMBER = 2;
-      private double longtitude_;
-      /**
-       * <code>double longtitude = 2;</code>
-       */
-      public double getLongtitude() {
-        return longtitude_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (latitude_ != 0D) {
-          output.writeDouble(1, latitude_);
-        }
-        if (longtitude_ != 0D) {
-          output.writeDouble(2, longtitude_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (latitude_ != 0D) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(1, latitude_);
-        }
-        if (longtitude_ != 0D) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(2, longtitude_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.three55.callevent.CallEventProto.CallEvent.LocationInfo)) {
-          return super.equals(obj);
-        }
-        com.three55.callevent.CallEventProto.CallEvent.LocationInfo other = (com.three55.callevent.CallEventProto.CallEvent.LocationInfo) obj;
-
-        boolean result = true;
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLatitude())
-            == java.lang.Double.doubleToLongBits(
-                other.getLatitude()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getLongtitude())
-            == java.lang.Double.doubleToLongBits(
-                other.getLongtitude()));
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLatitude()));
-        hash = (37 * hash) + LONGTITUDE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLongtitude()));
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.three55.callevent.CallEventProto.CallEvent.LocationInfo prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code callevent.CallEvent.LocationInfo}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:callevent.CallEvent.LocationInfo)
-          com.three55.callevent.CallEventProto.CallEvent.LocationInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_LocationInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_LocationInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.three55.callevent.CallEventProto.CallEvent.LocationInfo.class, com.three55.callevent.CallEventProto.CallEvent.LocationInfo.Builder.class);
-        }
-
-        // Construct using com.three55.callevent.CallEventProto.CallEvent.LocationInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          latitude_ = 0D;
-
-          longtitude_ = 0D;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_LocationInfo_descriptor;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.LocationInfo getDefaultInstanceForType() {
-          return com.three55.callevent.CallEventProto.CallEvent.LocationInfo.getDefaultInstance();
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.LocationInfo build() {
-          com.three55.callevent.CallEventProto.CallEvent.LocationInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.LocationInfo buildPartial() {
-          com.three55.callevent.CallEventProto.CallEvent.LocationInfo result = new com.three55.callevent.CallEventProto.CallEvent.LocationInfo(this);
-          result.latitude_ = latitude_;
-          result.longtitude_ = longtitude_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.three55.callevent.CallEventProto.CallEvent.LocationInfo) {
-            return mergeFrom((com.three55.callevent.CallEventProto.CallEvent.LocationInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.three55.callevent.CallEventProto.CallEvent.LocationInfo other) {
-          if (other == com.three55.callevent.CallEventProto.CallEvent.LocationInfo.getDefaultInstance()) return this;
-          if (other.getLatitude() != 0D) {
-            setLatitude(other.getLatitude());
-          }
-          if (other.getLongtitude() != 0D) {
-            setLongtitude(other.getLongtitude());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.three55.callevent.CallEventProto.CallEvent.LocationInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.three55.callevent.CallEventProto.CallEvent.LocationInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private double latitude_ ;
-        /**
-         * <code>double latitude = 1;</code>
-         */
-        public double getLatitude() {
-          return latitude_;
-        }
-        /**
-         * <code>double latitude = 1;</code>
-         */
-        public Builder setLatitude(double value) {
-          
-          latitude_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>double latitude = 1;</code>
-         */
-        public Builder clearLatitude() {
-          
-          latitude_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double longtitude_ ;
-        /**
-         * <code>double longtitude = 2;</code>
-         */
-        public double getLongtitude() {
-          return longtitude_;
-        }
-        /**
-         * <code>double longtitude = 2;</code>
-         */
-        public Builder setLongtitude(double value) {
-          
-          longtitude_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>double longtitude = 2;</code>
-         */
-        public Builder clearLongtitude() {
-          
-          longtitude_ = 0D;
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:callevent.CallEvent.LocationInfo)
-      }
-
-      // @@protoc_insertion_point(class_scope:callevent.CallEvent.LocationInfo)
-      private static final com.three55.callevent.CallEventProto.CallEvent.LocationInfo DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.three55.callevent.CallEventProto.CallEvent.LocationInfo();
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.LocationInfo getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<LocationInfo>
-          PARSER = new com.google.protobuf.AbstractParser<LocationInfo>() {
-        public LocationInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LocationInfo(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<LocationInfo> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<LocationInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.three55.callevent.CallEventProto.CallEvent.LocationInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface SoftwareInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:callevent.CallEvent.SoftwareInfo)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>string os_name = 1;</code>
-       */
-      java.lang.String getOsName();
-      /**
-       * <code>string os_name = 1;</code>
-       */
-      com.google.protobuf.ByteString
-          getOsNameBytes();
-
-      /**
-       * <code>string os_version = 2;</code>
-       */
-      java.lang.String getOsVersion();
-      /**
-       * <code>string os_version = 2;</code>
-       */
-      com.google.protobuf.ByteString
-          getOsVersionBytes();
-    }
-    /**
-     * Protobuf type {@code callevent.CallEvent.SoftwareInfo}
-     */
-    public  static final class SoftwareInfo extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:callevent.CallEvent.SoftwareInfo)
-        SoftwareInfoOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use SoftwareInfo.newBuilder() to construct.
-      private SoftwareInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private SoftwareInfo() {
-        osName_ = "";
-        osVersion_ = "";
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private SoftwareInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                osName_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                osVersion_ = s;
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_SoftwareInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_SoftwareInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo.class, com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo.Builder.class);
-      }
-
-      public static final int OS_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object osName_;
-      /**
-       * <code>string os_name = 1;</code>
-       */
-      public java.lang.String getOsName() {
-        java.lang.Object ref = osName_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          osName_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string os_name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getOsNameBytes() {
-        java.lang.Object ref = osName_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          osName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int OS_VERSION_FIELD_NUMBER = 2;
-      private volatile java.lang.Object osVersion_;
-      /**
-       * <code>string os_version = 2;</code>
-       */
-      public java.lang.String getOsVersion() {
-        java.lang.Object ref = osVersion_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          osVersion_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string os_version = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getOsVersionBytes() {
-        java.lang.Object ref = osVersion_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          osVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getOsNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, osName_);
-        }
-        if (!getOsVersionBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, osVersion_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getOsNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, osName_);
-        }
-        if (!getOsVersionBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, osVersion_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo)) {
-          return super.equals(obj);
-        }
-        com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo other = (com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo) obj;
-
-        boolean result = true;
-        result = result && getOsName()
-            .equals(other.getOsName());
-        result = result && getOsVersion()
-            .equals(other.getOsVersion());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + OS_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getOsName().hashCode();
-        hash = (37 * hash) + OS_VERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getOsVersion().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code callevent.CallEvent.SoftwareInfo}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:callevent.CallEvent.SoftwareInfo)
-          com.three55.callevent.CallEventProto.CallEvent.SoftwareInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_SoftwareInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_SoftwareInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo.class, com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo.Builder.class);
-        }
-
-        // Construct using com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          osName_ = "";
-
-          osVersion_ = "";
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.three55.callevent.CallEventProto.internal_static_callevent_CallEvent_SoftwareInfo_descriptor;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo getDefaultInstanceForType() {
-          return com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo.getDefaultInstance();
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo build() {
-          com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo buildPartial() {
-          com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo result = new com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo(this);
-          result.osName_ = osName_;
-          result.osVersion_ = osVersion_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo) {
-            return mergeFrom((com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo other) {
-          if (other == com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo.getDefaultInstance()) return this;
-          if (!other.getOsName().isEmpty()) {
-            osName_ = other.osName_;
-            onChanged();
-          }
-          if (!other.getOsVersion().isEmpty()) {
-            osVersion_ = other.osVersion_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object osName_ = "";
-        /**
-         * <code>string os_name = 1;</code>
-         */
-        public java.lang.String getOsName() {
-          java.lang.Object ref = osName_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            osName_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string os_name = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-            getOsNameBytes() {
-          java.lang.Object ref = osName_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            osName_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string os_name = 1;</code>
-         */
-        public Builder setOsName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          osName_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string os_name = 1;</code>
-         */
-        public Builder clearOsName() {
-          
-          osName_ = getDefaultInstance().getOsName();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string os_name = 1;</code>
-         */
-        public Builder setOsNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          osName_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object osVersion_ = "";
-        /**
-         * <code>string os_version = 2;</code>
-         */
-        public java.lang.String getOsVersion() {
-          java.lang.Object ref = osVersion_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            osVersion_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string os_version = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-            getOsVersionBytes() {
-          java.lang.Object ref = osVersion_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            osVersion_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string os_version = 2;</code>
-         */
-        public Builder setOsVersion(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          osVersion_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string os_version = 2;</code>
-         */
-        public Builder clearOsVersion() {
-          
-          osVersion_ = getDefaultInstance().getOsVersion();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string os_version = 2;</code>
-         */
-        public Builder setOsVersionBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          osVersion_ = value;
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:callevent.CallEvent.SoftwareInfo)
-      }
-
-      // @@protoc_insertion_point(class_scope:callevent.CallEvent.SoftwareInfo)
-      private static final com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo();
-      }
-
-      public static com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<SoftwareInfo>
-          PARSER = new com.google.protobuf.AbstractParser<SoftwareInfo>() {
-        public SoftwareInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SoftwareInfo(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<SoftwareInfo> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<SoftwareInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public com.three55.callevent.CallEventProto.CallEvent.SoftwareInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public static final int PROTO_VERSION_FIELD_NUMBER = 1;
@@ -3541,6 +350,336 @@ public final class CallEventProto {
       return eventTime_;
     }
 
+    public static final int NETWORK_MCC_FIELD_NUMBER = 4;
+    private volatile java.lang.Object networkMcc_;
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>string network_mcc = 4;</code>
+     */
+    public java.lang.String getNetworkMcc() {
+      java.lang.Object ref = networkMcc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkMcc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * </pre>
+     *
+     * <code>string network_mcc = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNetworkMccBytes() {
+      java.lang.Object ref = networkMcc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkMcc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NETWORK_MNC_FIELD_NUMBER = 5;
+    private volatile java.lang.Object networkMnc_;
+    /**
+     * <code>string network_mnc = 5;</code>
+     */
+    public java.lang.String getNetworkMnc() {
+      java.lang.Object ref = networkMnc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkMnc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string network_mnc = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNetworkMncBytes() {
+      java.lang.Object ref = networkMnc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkMnc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NETWORK_NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object networkName_;
+    /**
+     * <pre>
+     * carrier
+     * </pre>
+     *
+     * <code>string network_name = 6;</code>
+     */
+    public java.lang.String getNetworkName() {
+      java.lang.Object ref = networkName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * carrier
+     * </pre>
+     *
+     * <code>string network_name = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNetworkNameBytes() {
+      java.lang.Object ref = networkName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NETWORK_TYPE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object networkType_;
+    /**
+     * <pre>
+     * e.g. LTE, 2G, 3G
+     * </pre>
+     *
+     * <code>string network_type = 7;</code>
+     */
+    public java.lang.String getNetworkType() {
+      java.lang.Object ref = networkType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * e.g. LTE, 2G, 3G
+     * </pre>
+     *
+     * <code>string network_type = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNetworkTypeBytes() {
+      java.lang.Object ref = networkType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIGNAL_DBM_FIELD_NUMBER = 8;
+    private int signalDbm_;
+    /**
+     * <code>int32 signal_dbm = 8;</code>
+     */
+    public int getSignalDbm() {
+      return signalDbm_;
+    }
+
+    public static final int SIGNAL_ASU_FIELD_NUMBER = 9;
+    private int signalAsu_;
+    /**
+     * <code>int32 signal_asu = 9;</code>
+     */
+    public int getSignalAsu() {
+      return signalAsu_;
+    }
+
+    public static final int DEVICE_BRAND_FIELD_NUMBER = 10;
+    private volatile java.lang.Object deviceBrand_;
+    /**
+     * <code>string device_brand = 10;</code>
+     */
+    public java.lang.String getDeviceBrand() {
+      java.lang.Object ref = deviceBrand_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceBrand_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string device_brand = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceBrandBytes() {
+      java.lang.Object ref = deviceBrand_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceBrand_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEVICE_MODEL_FIELD_NUMBER = 11;
+    private volatile java.lang.Object deviceModel_;
+    /**
+     * <code>string device_model = 11;</code>
+     */
+    public java.lang.String getDeviceModel() {
+      java.lang.Object ref = deviceModel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceModel_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string device_model = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceModelBytes() {
+      java.lang.Object ref = deviceModel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceModel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEVICE_OS_NAME_FIELD_NUMBER = 12;
+    private volatile java.lang.Object deviceOsName_;
+    /**
+     * <code>string device_os_name = 12;</code>
+     */
+    public java.lang.String getDeviceOsName() {
+      java.lang.Object ref = deviceOsName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceOsName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string device_os_name = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceOsNameBytes() {
+      java.lang.Object ref = deviceOsName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceOsName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEVICE_OS_VERSION_FIELD_NUMBER = 13;
+    private volatile java.lang.Object deviceOsVersion_;
+    /**
+     * <code>string device_os_version = 13;</code>
+     */
+    public java.lang.String getDeviceOsVersion() {
+      java.lang.Object ref = deviceOsVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceOsVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string device_os_version = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceOsVersionBytes() {
+      java.lang.Object ref = deviceOsVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceOsVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LATITUDE_FIELD_NUMBER = 14;
+    private double latitude_;
+    /**
+     * <code>double latitude = 14;</code>
+     */
+    public double getLatitude() {
+      return latitude_;
+    }
+
+    public static final int LONGTITUDE_FIELD_NUMBER = 15;
+    private double longtitude_;
+    /**
+     * <code>double longtitude = 15;</code>
+     */
+    public double getLongtitude() {
+      return longtitude_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3562,6 +701,42 @@ public final class CallEventProto {
       if (eventTime_ != 0L) {
         output.writeInt64(3, eventTime_);
       }
+      if (!getNetworkMccBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, networkMcc_);
+      }
+      if (!getNetworkMncBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, networkMnc_);
+      }
+      if (!getNetworkNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, networkName_);
+      }
+      if (!getNetworkTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, networkType_);
+      }
+      if (signalDbm_ != 0) {
+        output.writeInt32(8, signalDbm_);
+      }
+      if (signalAsu_ != 0) {
+        output.writeInt32(9, signalAsu_);
+      }
+      if (!getDeviceBrandBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, deviceBrand_);
+      }
+      if (!getDeviceModelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, deviceModel_);
+      }
+      if (!getDeviceOsNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, deviceOsName_);
+      }
+      if (!getDeviceOsVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, deviceOsVersion_);
+      }
+      if (latitude_ != 0D) {
+        output.writeDouble(14, latitude_);
+      }
+      if (longtitude_ != 0D) {
+        output.writeDouble(15, longtitude_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3581,6 +756,46 @@ public final class CallEventProto {
       if (eventTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, eventTime_);
+      }
+      if (!getNetworkMccBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, networkMcc_);
+      }
+      if (!getNetworkMncBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, networkMnc_);
+      }
+      if (!getNetworkNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, networkName_);
+      }
+      if (!getNetworkTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, networkType_);
+      }
+      if (signalDbm_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, signalDbm_);
+      }
+      if (signalAsu_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, signalAsu_);
+      }
+      if (!getDeviceBrandBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, deviceBrand_);
+      }
+      if (!getDeviceModelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, deviceModel_);
+      }
+      if (!getDeviceOsNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, deviceOsName_);
+      }
+      if (!getDeviceOsVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, deviceOsVersion_);
+      }
+      if (latitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(14, latitude_);
+      }
+      if (longtitude_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(15, longtitude_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3604,6 +819,34 @@ public final class CallEventProto {
           == other.getAppVersion());
       result = result && (getEventTime()
           == other.getEventTime());
+      result = result && getNetworkMcc()
+          .equals(other.getNetworkMcc());
+      result = result && getNetworkMnc()
+          .equals(other.getNetworkMnc());
+      result = result && getNetworkName()
+          .equals(other.getNetworkName());
+      result = result && getNetworkType()
+          .equals(other.getNetworkType());
+      result = result && (getSignalDbm()
+          == other.getSignalDbm());
+      result = result && (getSignalAsu()
+          == other.getSignalAsu());
+      result = result && getDeviceBrand()
+          .equals(other.getDeviceBrand());
+      result = result && getDeviceModel()
+          .equals(other.getDeviceModel());
+      result = result && getDeviceOsName()
+          .equals(other.getDeviceOsName());
+      result = result && getDeviceOsVersion()
+          .equals(other.getDeviceOsVersion());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getLatitude())
+          == java.lang.Double.doubleToLongBits(
+              other.getLatitude()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getLongtitude())
+          == java.lang.Double.doubleToLongBits(
+              other.getLongtitude()));
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3622,6 +865,32 @@ public final class CallEventProto {
       hash = (37 * hash) + EVENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getEventTime());
+      hash = (37 * hash) + NETWORK_MCC_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkMcc().hashCode();
+      hash = (37 * hash) + NETWORK_MNC_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkMnc().hashCode();
+      hash = (37 * hash) + NETWORK_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkName().hashCode();
+      hash = (37 * hash) + NETWORK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkType().hashCode();
+      hash = (37 * hash) + SIGNAL_DBM_FIELD_NUMBER;
+      hash = (53 * hash) + getSignalDbm();
+      hash = (37 * hash) + SIGNAL_ASU_FIELD_NUMBER;
+      hash = (53 * hash) + getSignalAsu();
+      hash = (37 * hash) + DEVICE_BRAND_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceBrand().hashCode();
+      hash = (37 * hash) + DEVICE_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceModel().hashCode();
+      hash = (37 * hash) + DEVICE_OS_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceOsName().hashCode();
+      hash = (37 * hash) + DEVICE_OS_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceOsVersion().hashCode();
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLatitude()));
+      hash = (37 * hash) + LONGTITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLongtitude()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3757,6 +1026,30 @@ public final class CallEventProto {
 
         eventTime_ = 0L;
 
+        networkMcc_ = "";
+
+        networkMnc_ = "";
+
+        networkName_ = "";
+
+        networkType_ = "";
+
+        signalDbm_ = 0;
+
+        signalAsu_ = 0;
+
+        deviceBrand_ = "";
+
+        deviceModel_ = "";
+
+        deviceOsName_ = "";
+
+        deviceOsVersion_ = "";
+
+        latitude_ = 0D;
+
+        longtitude_ = 0D;
+
         return this;
       }
 
@@ -3782,6 +1075,18 @@ public final class CallEventProto {
         result.protoVersion_ = protoVersion_;
         result.appVersion_ = appVersion_;
         result.eventTime_ = eventTime_;
+        result.networkMcc_ = networkMcc_;
+        result.networkMnc_ = networkMnc_;
+        result.networkName_ = networkName_;
+        result.networkType_ = networkType_;
+        result.signalDbm_ = signalDbm_;
+        result.signalAsu_ = signalAsu_;
+        result.deviceBrand_ = deviceBrand_;
+        result.deviceModel_ = deviceModel_;
+        result.deviceOsName_ = deviceOsName_;
+        result.deviceOsVersion_ = deviceOsVersion_;
+        result.latitude_ = latitude_;
+        result.longtitude_ = longtitude_;
         onBuilt();
         return result;
       }
@@ -3831,6 +1136,50 @@ public final class CallEventProto {
         }
         if (other.getEventTime() != 0L) {
           setEventTime(other.getEventTime());
+        }
+        if (!other.getNetworkMcc().isEmpty()) {
+          networkMcc_ = other.networkMcc_;
+          onChanged();
+        }
+        if (!other.getNetworkMnc().isEmpty()) {
+          networkMnc_ = other.networkMnc_;
+          onChanged();
+        }
+        if (!other.getNetworkName().isEmpty()) {
+          networkName_ = other.networkName_;
+          onChanged();
+        }
+        if (!other.getNetworkType().isEmpty()) {
+          networkType_ = other.networkType_;
+          onChanged();
+        }
+        if (other.getSignalDbm() != 0) {
+          setSignalDbm(other.getSignalDbm());
+        }
+        if (other.getSignalAsu() != 0) {
+          setSignalAsu(other.getSignalAsu());
+        }
+        if (!other.getDeviceBrand().isEmpty()) {
+          deviceBrand_ = other.deviceBrand_;
+          onChanged();
+        }
+        if (!other.getDeviceModel().isEmpty()) {
+          deviceModel_ = other.deviceModel_;
+          onChanged();
+        }
+        if (!other.getDeviceOsName().isEmpty()) {
+          deviceOsName_ = other.deviceOsName_;
+          onChanged();
+        }
+        if (!other.getDeviceOsVersion().isEmpty()) {
+          deviceOsVersion_ = other.deviceOsVersion_;
+          onChanged();
+        }
+        if (other.getLatitude() != 0D) {
+          setLatitude(other.getLatitude());
+        }
+        if (other.getLongtitude() != 0D) {
+          setLongtitude(other.getLongtitude());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3933,6 +1282,717 @@ public final class CallEventProto {
       public Builder clearEventTime() {
         
         eventTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object networkMcc_ = "";
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>string network_mcc = 4;</code>
+       */
+      public java.lang.String getNetworkMcc() {
+        java.lang.Object ref = networkMcc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          networkMcc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>string network_mcc = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNetworkMccBytes() {
+        java.lang.Object ref = networkMcc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          networkMcc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>string network_mcc = 4;</code>
+       */
+      public Builder setNetworkMcc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        networkMcc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>string network_mcc = 4;</code>
+       */
+      public Builder clearNetworkMcc() {
+        
+        networkMcc_ = getDefaultInstance().getNetworkMcc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * </pre>
+       *
+       * <code>string network_mcc = 4;</code>
+       */
+      public Builder setNetworkMccBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        networkMcc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object networkMnc_ = "";
+      /**
+       * <code>string network_mnc = 5;</code>
+       */
+      public java.lang.String getNetworkMnc() {
+        java.lang.Object ref = networkMnc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          networkMnc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string network_mnc = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNetworkMncBytes() {
+        java.lang.Object ref = networkMnc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          networkMnc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string network_mnc = 5;</code>
+       */
+      public Builder setNetworkMnc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        networkMnc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string network_mnc = 5;</code>
+       */
+      public Builder clearNetworkMnc() {
+        
+        networkMnc_ = getDefaultInstance().getNetworkMnc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string network_mnc = 5;</code>
+       */
+      public Builder setNetworkMncBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        networkMnc_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object networkName_ = "";
+      /**
+       * <pre>
+       * carrier
+       * </pre>
+       *
+       * <code>string network_name = 6;</code>
+       */
+      public java.lang.String getNetworkName() {
+        java.lang.Object ref = networkName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          networkName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * carrier
+       * </pre>
+       *
+       * <code>string network_name = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNetworkNameBytes() {
+        java.lang.Object ref = networkName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          networkName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * carrier
+       * </pre>
+       *
+       * <code>string network_name = 6;</code>
+       */
+      public Builder setNetworkName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        networkName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * carrier
+       * </pre>
+       *
+       * <code>string network_name = 6;</code>
+       */
+      public Builder clearNetworkName() {
+        
+        networkName_ = getDefaultInstance().getNetworkName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * carrier
+       * </pre>
+       *
+       * <code>string network_name = 6;</code>
+       */
+      public Builder setNetworkNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        networkName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object networkType_ = "";
+      /**
+       * <pre>
+       * e.g. LTE, 2G, 3G
+       * </pre>
+       *
+       * <code>string network_type = 7;</code>
+       */
+      public java.lang.String getNetworkType() {
+        java.lang.Object ref = networkType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          networkType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * e.g. LTE, 2G, 3G
+       * </pre>
+       *
+       * <code>string network_type = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNetworkTypeBytes() {
+        java.lang.Object ref = networkType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          networkType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * e.g. LTE, 2G, 3G
+       * </pre>
+       *
+       * <code>string network_type = 7;</code>
+       */
+      public Builder setNetworkType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        networkType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * e.g. LTE, 2G, 3G
+       * </pre>
+       *
+       * <code>string network_type = 7;</code>
+       */
+      public Builder clearNetworkType() {
+        
+        networkType_ = getDefaultInstance().getNetworkType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * e.g. LTE, 2G, 3G
+       * </pre>
+       *
+       * <code>string network_type = 7;</code>
+       */
+      public Builder setNetworkTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        networkType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int signalDbm_ ;
+      /**
+       * <code>int32 signal_dbm = 8;</code>
+       */
+      public int getSignalDbm() {
+        return signalDbm_;
+      }
+      /**
+       * <code>int32 signal_dbm = 8;</code>
+       */
+      public Builder setSignalDbm(int value) {
+        
+        signalDbm_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 signal_dbm = 8;</code>
+       */
+      public Builder clearSignalDbm() {
+        
+        signalDbm_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int signalAsu_ ;
+      /**
+       * <code>int32 signal_asu = 9;</code>
+       */
+      public int getSignalAsu() {
+        return signalAsu_;
+      }
+      /**
+       * <code>int32 signal_asu = 9;</code>
+       */
+      public Builder setSignalAsu(int value) {
+        
+        signalAsu_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 signal_asu = 9;</code>
+       */
+      public Builder clearSignalAsu() {
+        
+        signalAsu_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deviceBrand_ = "";
+      /**
+       * <code>string device_brand = 10;</code>
+       */
+      public java.lang.String getDeviceBrand() {
+        java.lang.Object ref = deviceBrand_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceBrand_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string device_brand = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceBrandBytes() {
+        java.lang.Object ref = deviceBrand_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceBrand_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string device_brand = 10;</code>
+       */
+      public Builder setDeviceBrand(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceBrand_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_brand = 10;</code>
+       */
+      public Builder clearDeviceBrand() {
+        
+        deviceBrand_ = getDefaultInstance().getDeviceBrand();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_brand = 10;</code>
+       */
+      public Builder setDeviceBrandBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceBrand_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deviceModel_ = "";
+      /**
+       * <code>string device_model = 11;</code>
+       */
+      public java.lang.String getDeviceModel() {
+        java.lang.Object ref = deviceModel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceModel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string device_model = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceModelBytes() {
+        java.lang.Object ref = deviceModel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceModel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string device_model = 11;</code>
+       */
+      public Builder setDeviceModel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceModel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_model = 11;</code>
+       */
+      public Builder clearDeviceModel() {
+        
+        deviceModel_ = getDefaultInstance().getDeviceModel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_model = 11;</code>
+       */
+      public Builder setDeviceModelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceModel_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deviceOsName_ = "";
+      /**
+       * <code>string device_os_name = 12;</code>
+       */
+      public java.lang.String getDeviceOsName() {
+        java.lang.Object ref = deviceOsName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceOsName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string device_os_name = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceOsNameBytes() {
+        java.lang.Object ref = deviceOsName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceOsName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string device_os_name = 12;</code>
+       */
+      public Builder setDeviceOsName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceOsName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_os_name = 12;</code>
+       */
+      public Builder clearDeviceOsName() {
+        
+        deviceOsName_ = getDefaultInstance().getDeviceOsName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_os_name = 12;</code>
+       */
+      public Builder setDeviceOsNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceOsName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deviceOsVersion_ = "";
+      /**
+       * <code>string device_os_version = 13;</code>
+       */
+      public java.lang.String getDeviceOsVersion() {
+        java.lang.Object ref = deviceOsVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceOsVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string device_os_version = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceOsVersionBytes() {
+        java.lang.Object ref = deviceOsVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceOsVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string device_os_version = 13;</code>
+       */
+      public Builder setDeviceOsVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceOsVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_os_version = 13;</code>
+       */
+      public Builder clearDeviceOsVersion() {
+        
+        deviceOsVersion_ = getDefaultInstance().getDeviceOsVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string device_os_version = 13;</code>
+       */
+      public Builder setDeviceOsVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceOsVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double latitude_ ;
+      /**
+       * <code>double latitude = 14;</code>
+       */
+      public double getLatitude() {
+        return latitude_;
+      }
+      /**
+       * <code>double latitude = 14;</code>
+       */
+      public Builder setLatitude(double value) {
+        
+        latitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double latitude = 14;</code>
+       */
+      public Builder clearLatitude() {
+        
+        latitude_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double longtitude_ ;
+      /**
+       * <code>double longtitude = 15;</code>
+       */
+      public double getLongtitude() {
+        return longtitude_;
+      }
+      /**
+       * <code>double longtitude = 15;</code>
+       */
+      public Builder setLongtitude(double value) {
+        
+        longtitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double longtitude = 15;</code>
+       */
+      public Builder clearLongtitude() {
+        
+        longtitude_ = 0D;
         onChanged();
         return this;
       }
@@ -4579,31 +2639,6 @@ public final class CallEventProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_callevent_CallEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_callevent_CallEvent_NetworkInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_callevent_CallEvent_NetworkInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_callevent_CallEvent_DeviceInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_callevent_CallEvent_DeviceInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_callevent_CallEvent_LocationInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_callevent_CallEvent_LocationInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_callevent_CallEvent_SoftwareInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_callevent_CallEvent_SoftwareInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_callevent_Acknowledgement_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4617,21 +2652,20 @@ public final class CallEventProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017CallEvent.proto\022\tcallevent\"\345\002\n\tCallEve" +
+      "\n\017CallEvent.proto\022\tcallevent\"\316\002\n\tCallEve" +
       "nt\022\025\n\rproto_version\030\001 \001(\005\022\023\n\013app_version" +
-      "\030\002 \001(\005\022\022\n\nevent_time\030\003 \001(\003\032\177\n\013NetworkInf" +
-      "o\022\013\n\003mcc\030\001 \001(\t\022\013\n\003mnc\030\002 \001(\t\022\024\n\014network_n" +
-      "ame\030\003 \001(\t\022\024\n\014network_type\030\004 \001(\t\032*\n\016Signa" +
-      "lStrength\022\013\n\003dbm\030\001 \001(\005\022\013\n\003asu\030\002 \001(\005\032,\n\nD" +
-      "eviceInfo\022\014\n\004imei\030\001 \001(\t\022\020\n\010model_no\030\002 \001(" +
-      "\t\0324\n\014LocationInfo\022\020\n\010latitude\030\001 \001(\001\022\022\n\nl" +
-      "ongtitude\030\002 \001(\001\0323\n\014SoftwareInfo\022\017\n\007os_na" +
-      "me\030\001 \001(\t\022\022\n\nos_version\030\002 \001(\t\"9\n\017Acknowle" +
-      "dgement\022\025\n\rresponse_code\030\001 \001(\005\022\017\n\007err_ms" +
-      "g\030\002 \001(\t2O\n\016EventCollector\022=\n\007Publish\022\024.c" +
-      "allevent.CallEvent\032\032.callevent.Acknowled" +
-      "gement\"\000B\'\n\025com.three55.calleventB\016CallE" +
-      "ventProtob\006proto3"
+      "\030\002 \001(\005\022\022\n\nevent_time\030\003 \001(\003\022\023\n\013network_mc" +
+      "c\030\004 \001(\t\022\023\n\013network_mnc\030\005 \001(\t\022\024\n\014network_" +
+      "name\030\006 \001(\t\022\024\n\014network_type\030\007 \001(\t\022\022\n\nsign" +
+      "al_dbm\030\010 \001(\005\022\022\n\nsignal_asu\030\t \001(\005\022\024\n\014devi" +
+      "ce_brand\030\n \001(\t\022\024\n\014device_model\030\013 \001(\t\022\026\n\016" +
+      "device_os_name\030\014 \001(\t\022\031\n\021device_os_versio" +
+      "n\030\r \001(\t\022\020\n\010latitude\030\016 \001(\001\022\022\n\nlongtitude\030" +
+      "\017 \001(\001\"9\n\017Acknowledgement\022\025\n\rresponse_cod" +
+      "e\030\001 \001(\005\022\017\n\007err_msg\030\002 \001(\t2O\n\016EventCollect" +
+      "or\022=\n\007Publish\022\024.callevent.CallEvent\032\032.ca" +
+      "llevent.Acknowledgement\"\000B\'\n\025com.three55" +
+      ".calleventB\016CallEventProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4650,37 +2684,7 @@ public final class CallEventProto {
     internal_static_callevent_CallEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_callevent_CallEvent_descriptor,
-        new java.lang.String[] { "ProtoVersion", "AppVersion", "EventTime", });
-    internal_static_callevent_CallEvent_NetworkInfo_descriptor =
-      internal_static_callevent_CallEvent_descriptor.getNestedTypes().get(0);
-    internal_static_callevent_CallEvent_NetworkInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_callevent_CallEvent_NetworkInfo_descriptor,
-        new java.lang.String[] { "Mcc", "Mnc", "NetworkName", "NetworkType", });
-    internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_descriptor =
-      internal_static_callevent_CallEvent_NetworkInfo_descriptor.getNestedTypes().get(0);
-    internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_callevent_CallEvent_NetworkInfo_SignalStrength_descriptor,
-        new java.lang.String[] { "Dbm", "Asu", });
-    internal_static_callevent_CallEvent_DeviceInfo_descriptor =
-      internal_static_callevent_CallEvent_descriptor.getNestedTypes().get(1);
-    internal_static_callevent_CallEvent_DeviceInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_callevent_CallEvent_DeviceInfo_descriptor,
-        new java.lang.String[] { "Imei", "ModelNo", });
-    internal_static_callevent_CallEvent_LocationInfo_descriptor =
-      internal_static_callevent_CallEvent_descriptor.getNestedTypes().get(2);
-    internal_static_callevent_CallEvent_LocationInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_callevent_CallEvent_LocationInfo_descriptor,
-        new java.lang.String[] { "Latitude", "Longtitude", });
-    internal_static_callevent_CallEvent_SoftwareInfo_descriptor =
-      internal_static_callevent_CallEvent_descriptor.getNestedTypes().get(3);
-    internal_static_callevent_CallEvent_SoftwareInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_callevent_CallEvent_SoftwareInfo_descriptor,
-        new java.lang.String[] { "OsName", "OsVersion", });
+        new java.lang.String[] { "ProtoVersion", "AppVersion", "EventTime", "NetworkMcc", "NetworkMnc", "NetworkName", "NetworkType", "SignalDbm", "SignalAsu", "DeviceBrand", "DeviceModel", "DeviceOsName", "DeviceOsVersion", "Latitude", "Longtitude", });
     internal_static_callevent_Acknowledgement_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_callevent_Acknowledgement_fieldAccessorTable = new
