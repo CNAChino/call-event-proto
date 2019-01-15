@@ -1,14 +1,21 @@
 syntax = "proto3";
 
+// put classes under com.three55.callevent
 option java_package = "com.three55.callevent";
+
+// class that will contain protobuf generated files.
+// For gRPC generated files, see comment in EventCollector
 option java_outer_classname = "CallEventProto";
 
 package callevent;
 
+// Note:  gRPC generated generates class using the service name.
+// In this case, com.three55.callevent.EventCollector.Grpc
 service EventCollector {
     rpc Publish (CallEvent) returns(Acknowledgement) {}
 }
 
+// request message
 message CallEvent {
 
     int32 proto_version = 1;
@@ -32,6 +39,7 @@ message CallEvent {
 
 }
 
+// request Ack
 message Acknowledgement {
     int32 response_code = 1;
     string err_msg = 2;
