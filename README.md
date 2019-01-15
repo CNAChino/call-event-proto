@@ -26,3 +26,7 @@ Follow the following to build call-event-proto:
 `$ mvn clean install`
 
 This should install call-event-proto jar file in your maven local repository.
+
+## Call Event Service
+
+see https://github.com/CNAChino/call-event-service
